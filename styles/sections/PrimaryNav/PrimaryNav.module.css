@@ -1,0 +1,53 @@
+
+
+.nav {
+  width: 20rem;
+  flex: none;
+  border-right-width: 1px;
+  border-color: rgb(var(--color-surface-200));
+  padding: 0.75rem;
+  
+}
+
+.navButtonsContainer {
+width: 100%;
+/* border-radius: var(--default-rounding); */
+/* overflow: hidden; */
+display: flex;
+position: relative;
+/* justify-content: flex-end; */
+flex-direction: column;
+/* padding: 0.5rem; */
+/* border-radius: 0.5rem; */
+/* background-color: rgb(var(--color-primary-400)); */
+margin-bottom: 0.75rem;
+border-radius: var(--default-rounding);
+box-shadow: var(--default-box-shadow);
+
+}
+
+.navButtonsContainerBottom {
+  height: 30px;
+  background-color: rgb(var(--color-primary-400));
+  /* margin: 1rem 0; */
+  border-radius: 0 0  var(--default-rounding) var(--default-rounding);
+  /* box-shadow: var(--default-box-shadow); */
+}
+
+.navButtonsCollapseContainer {
+  padding: 0 0.5rem;
+  /* padding: 0 0.25rem; */
+  background-color: rgb(var(--color-primary-400));
+}
+
+.navButtonsContainerTop {
+  height: 30px;
+  background-color: rgb(var(--color-primary-400));
+  border-radius:   var(--default-rounding) var(--default-rounding) 0 0;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

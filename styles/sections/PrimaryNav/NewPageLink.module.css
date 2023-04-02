@@ -1,0 +1,14 @@
+.link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-left: 0.5rem;
+  & span {
+    display: block;
+    line-height: 1.5rem;
+  }
+  & svg {
+    font-size: 1.25rem;
+    color: rgb(var(--color-primary-400));
+  }
+}

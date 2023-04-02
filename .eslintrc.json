@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier",
+    "plugin:react/jsx-runtime"
+  ],
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-curly-brace-presence": "off",
+    // I'm not sure if we need it
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+    "react/require-default-props": "off",
+    // Not usable with templates import/export structure
+    // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md#importno-cycle
+    "import/no-cycle": "off",
+    // TS job
+    // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+    "react/prop-types": "off",
+    "react/no-array-index-key": "warn",
+    
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+
 }

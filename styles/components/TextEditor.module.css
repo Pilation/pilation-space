@@ -1,0 +1,79 @@
+
+.editorWrapper{
+  width: 100%;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 2rem 0;
+  background-color: rgb(var(--color-primary-500));
+}
+.editorBody{
+  width: 100%;
+  min-height: 500px;
+  background-color: #fff;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-color: rgb(var(--color-surface-200));
+  padding: 1rem;
+  &:focus-visible {
+    outline: none;
+  }
+}
+.ditorButtonsContainer{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.loggerCard {
+  border-radius: 20px;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+  top: 1em;
+  transform: translateX(200px);
+  transition: transform 0.3s;
+  &.opened {
+    transform: translateX(200px);
+    transition: transform 0.3s;
+  }
+}
+.loggerBox {
+  width: 220px;
+  height: 220px;
+  overflow-y: auto;
+}
+
+.loggerList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+.loggerElement{
+  padding: 0.5em 0;
+  font-weight: bold;
+  width: 100%;
+}
+.divider {
+  margin-bottom: 0.25em;
+  width: 100%;
+  border-radius: 0.5em;
+  height: 2px;
+  background-color: #000;
+}
+.loggerCloseButton {
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  background-color: #fff;
+  border: 0.25rem solid #000;
+  color: #000;
+  font-size: 1rem;
+  line-height: normal;
+}

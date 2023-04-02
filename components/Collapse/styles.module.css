@@ -1,0 +1,9 @@
+.collapseContainter {
+  overflow: hidden;
+}
+
+.collapseBody {
+  position: relative;
+  transition-property: top;
+  transition-timing-function: linear;
+}

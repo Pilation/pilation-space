@@ -1,0 +1,8 @@
+.divider {
+  display: block;
+  height: 1px;
+  width: 100%;
+  /* flex-grow: 1; */
+  background-color: rgb(var(--color-surface-200));
+  /* background-color: black; */
+}

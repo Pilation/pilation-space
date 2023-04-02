@@ -1,0 +1,64 @@
+{
+  "pages": [
+    {
+      "name": "Main page",
+      "type": "page",
+      "title": "Main page",
+      "url": "http://www.example.com",
+      "children": [
+        {
+          "name": "Sub page",
+          "type": "page",
+          "title": "Sub page",
+          "url": "http://www.example.com/subpage",
+          "children": [
+            {
+              "name": "Sub sub page",
+              "type": "page",
+              "title": "Sub sub page",
+              "url": "http://www.example.com/subpage/subsubpage",
+              "children": [
+                {
+                  "name": "Sub sub sub page",
+                  "type": "page",
+                  "title": "Sub sub sub page",
+                  "url": "http://www.example.com/subpage/subsubpage/subsubsubpage",
+                  "children": [
+                    {
+                      "name": "Sub sub sub sub page",
+                      "type": "page",
+                      "title": "Sub sub sub sub page",
+                      "url": "http://www.example.com/subpage/subsubpage/subsubsubpage/subsubsubsubpage",
+                      "children": [
+                        {
+                          "name": "Sub sub sub sub sub page",
+                          "type": "page",
+                          "title": "Sub sub sub sub sub page",
+                          "url": "http://www.example.com/subpage/subsubpage/subsubsubpage/subsubsubsubpage/subsubsubsubsubpage",
+                          "children": [
+                            {
+                              "name": "Sub sub sub sub sub sub page",
+                              "type": "page",
+                              "title": "Sub sub sub sub sub sub page",
+                              "url": "http://www.example.com/subpage/subsubpage/subsubsubpage/subsubsubsubpage/subsubsubsubsubpage/subsubsubsubsubsubpage"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Main page2",
+      "type": "page",
+      "title": "Main page",
+      "url": "http://www.example2.com"
+    }
+  ]
+}

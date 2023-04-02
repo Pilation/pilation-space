@@ -1,0 +1,156 @@
+
+.newPageForm {
+  margin-top: 30px;
+  padding: 0.5rem 0.5rem;
+  /* border: 2px solid rgb(var(--color-primary-400)); */
+  /* background-color: rgb(var(--color-surface-200)); */
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* border: none; */
+  & input, & select {
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;  
+    /* rgb(var(--color-surface-100)); */
+    background-color: white;
+    box-shadow: var(--default-box-shadow);
+  padding: 0.5rem 1rem;
+    /* transition: border-color 150ms linear; */
+    transition: all 150ms linear;
+  }
+  & input:focus, & select:focus {
+    /* background-color: rgb(var(--color-surface-100)); */
+    border-color: rgb(var(--color-primary-400));
+    transition: all 150ms linear;
+    
+  }
+  & input:hover, & select:hover {
+    /* background-color: rgb(var(--color-surface-100)); */
+    border-color: rgb(var(--color-primary-400));
+    transition: all 150ms linear; 
+    
+  }
+  & input::placeholder {
+    color: inherit;
+  }
+}
+
+.newPageTitle {
+ color: #fff;
+}
+
+.newPageLinkContainer {
+  
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.75rem; */
+
+}
+
+.newPageAddLinkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  
+}
+
+.newPageName {
+  border-width: 1px;
+  border-style: solid;
+  border-color:  rgb(var(--color-surface-100));
+  /* padding: 0.5rem 1rem; */
+  transition: border-color 150ms linear;
+ &:focus {
+  border-color: rgb(var(--color-primary-400));
+ }
+  /* flex-direction: column; */
+  
+}
+
+.newPageNameErrorText {
+  color: red;
+  line-height: 20px;
+  padding-left: 1rem;
+}
+
+.newPageLinkForm {
+  /* border: 1px solid black; */
+  border-top: none;
+  padding: 0.75rem;
+  /* padding-left: 1rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  /* margin-top: 0.5rem; */
+  /* margin-bottom: 2rem; */
+  border-radius: 0 0 0.5rem 0.5rem;
+  /* flex-direction: column; */
+}
+
+.newPageAddLinkButton {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  /* flex-direction: column; */
+}
+
+.newPageSubmitButton {
+  font-weight: bold;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: rgb(var(--color-surface-200));
+  box-shadow: var(--grey-button-box-shadow);
+  border-radius: 0.5rem;
+  /* border-width: 2px;
+  border-style: solid;
+  border-color:  rgb(var(--color-surface-200)); */
+  transition: all 150ms linear;
+ &:hover {
+  background-color: rgb(var(--color-primary-400));
+  color: white;
+  /* background-color: rgb(var(--color-surface-200)); */
+  /* border-color: rgb(var(--color-primary-400)); */
+  transition: all 150ms linear;
+ }
+  /* flex-direction: column; */
+}
+
+.newPageLinkAdress {
+  /* width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem; */
+  /* flex-direction: column; */
+}
+
+.newPageLinkValueContainer {
+  display: flex;
+  gap: 0.75rem;
+  /* width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem; */
+  /* flex-direction: column; */
+}
+
+.newPageLinkValueLabel {
+  /* width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem; */
+  /* flex-direction: column; */
+}
+
+.newPageLinkValueSelect {
+  /* width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem; */
+  /* flex-direction: column; */
+}
+.newPageList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

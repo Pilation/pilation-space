@@ -1,0 +1,52 @@
+.newPageLinkForm {
+  /* border: 1px solid black; */
+  border-top: none;
+  padding: 0.75rem;
+  /* padding-left: 1rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  /* margin-top: 0.5rem; */
+  /* margin-bottom: 2rem; */
+  border-radius: 0 0 0.5rem 0.5rem;
+  /* flex-direction: column; */
+}
+.newPageLinkForm > select, .newPageLinkForm > select > option {
+  text-transform: capitalize
+}
+
+
+.newPageSubmitButton {
+  font-weight: bold;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: rgb(var(--color-surface-200));
+  box-shadow: var(--grey-button-box-shadow);
+  border-radius: 0.5rem;
+  /* border-width: 2px;
+  border-style: solid;
+  border-color:  rgb(var(--color-surface-200)); */
+  transition: all 150ms linear;
+ &:hover {
+  background-color: rgb(var(--color-primary-400));
+  color: white;
+  /* background-color: rgb(var(--color-surface-200)); */
+  /* border-color: rgb(var(--color-primary-400)); */
+  transition: all 150ms linear;
+ }
+  /* flex-direction: column; */
+}
+
+.newPageLinkValueSelect {
+  /* width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem; */
+  /* flex-direction: column; */
+}
+
+.newPageList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

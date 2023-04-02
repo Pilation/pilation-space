@@ -1,0 +1,25 @@
+.createButton {
+  flex-shrink: 0;
+  box-shadow: var(--grey-button-box-shadow);
+  background-color: rgb(var(--color-surface-100));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--default-rounding);
+  width: 2.75rem;
+  z-index: 2;
+  aspect-ratio: 1 / 1;
+  transition: transform 150ms linear;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 150ms linear;
+  }
+  & svg {
+    font-size: 1.25rem;
+    transform-origin: center;
+    transition: transform 0.2s linear;
+    &.rotatedHalf {
+      transform: rotate(45deg);
+    }
+  }
+}
