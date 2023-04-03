@@ -9,8 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 import Collapse from "../../components/Collapse/index";
-import { TRelationship } from "../../app/api/organizations/[uuid]/pages";
-import styles from "../../styles/sections/PrimaryNav/Element.module.css";
+import { TRelationship } from "../../app/api/pages";
+import styles from "./styles/Element.module.css";
 
 export interface IPagesForMenuLink {
   target: string;
@@ -25,7 +25,7 @@ export interface IPagesForMenu {
 
 interface IElement {
   page: IPagesForMenu;
-  css?: React.CSSProperties;
+  // css?: React.CSSProperties;
   active: boolean;
   handleClick: () => void;
   handleDelete: () => void;
@@ -33,7 +33,7 @@ interface IElement {
 
 export default function Element({
   page,
-  css,
+  // css,
   handleClick,
   handleDelete,
   active,

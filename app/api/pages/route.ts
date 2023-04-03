@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
 export type TLink = {
   source: string;
@@ -197,16 +197,6 @@ const pages = [
   },
 ];
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Pages>
-) {
-  // if (req.method === 'POST') {
-  //   // Call cosmos db and create a new page.
-  //   console.log()
-
-  //   return res.status(200).json(page)
-  // }
-
-  res.status(200).json(pages);
+export async function GET() {
+  return NextResponse.json(pages);
 }

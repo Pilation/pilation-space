@@ -5,11 +5,14 @@
 
 // {OrgId}/Menus/{1}/
 
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next";
 
-type Data = string
+type Data = string;
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  const { uuid } = req.query
-  res.status(200).json(`Message: I'm ${uuid} menus`)
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
+) {
+  const { uuid } = req.query;
+  res.status(200).json(`Message: I'm ${uuid} menus`);
 }

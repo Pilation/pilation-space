@@ -1,14 +1,17 @@
-'use client'
+"use client";
 
-import { faArrowRight, faArrowsLeftRight } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowRight,
+  faArrowsLeftRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from '../../styles/sections/PrimaryNav/NewPageLink.module.css'
+import styles from "./styles/NewPageLink.module.css";
 
 interface INewPageLink {
-  to: string
-  relationship: 'parent' | 'child'
-  css?: React.CSSProperties
+  to: string;
+  relationship: "parent" | "child";
+  css?: React.CSSProperties;
 }
 
 export default function NewPageLink({ to, relationship, css }: INewPageLink) {
@@ -19,5 +22,5 @@ export default function NewPageLink({ to, relationship, css }: INewPageLink) {
       <FontAwesomeIcon icon={faArrowsLeftRight} />
       <span>{relationship}</span>
     </li>
-  )
+  );
 }

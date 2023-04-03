@@ -1,12 +1,11 @@
-
-.editorWrapper{
+.editorWrapper {
   width: 100%;
   border-radius: 0.5rem;
   box-sizing: border-box;
   padding: 2rem 0;
-  background-color: rgb(var(--color-primary-500));
+  background-color: var(--white);
 }
-.editorBody{
+.editorBody {
   width: 100%;
   min-height: 500px;
   background-color: #fff;
@@ -18,7 +17,7 @@
     outline: none;
   }
 }
-.ditorButtonsContainer{
+.ditorButtonsContainer {
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -51,7 +50,7 @@
   flex-direction: column;
   margin-top: 1em;
 }
-.loggerElement{
+.loggerElement {
   padding: 0.5em 0;
   font-weight: bold;
   width: 100%;

@@ -1,47 +1,51 @@
-'use client'
-import { useEffect, useRef, useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
-import { v4 as uuidv4 } from 'uuid'
+"use client";
 
-import Collapse from '../../components/Collapse/index'
-import CreateButton from '../../components/createButton'
-import Divider from '../../components/divider'
-import { IPage, TLink, TRelationship } from '../../pages/api/organizations/[uuid]/pages'
+import { useEffect, useRef, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { v4 as uuidv4 } from "uuid";
+
+import Collapse from "../../components/Collapse/index";
+import CreateButton from "../../components/CreateButton";
+import Divider from "../../components/Divider";
+import { IPage, TLink, TRelationship } from "../../app/api/pages";
 // styles
-import styles from '../../styles/sections/PrimaryNav/NewPageForm.module.css'
-import NewPageLink from './NewPageLink'
-import NewPageLinkForm from './NewPageLinkForm'
+import styles from "../../styles/sections/PrimaryNav/NewPageForm.module.css";
+import NewPageLink from "./NewPageLink";
+import NewPageLinkForm from "./NewPageLinkForm";
 
 export interface IPagesForSelect {
-  id: string
-  name: string
+  id: string;
+  name: string;
 }
 
 type Inputs = {
-  pageName: string
-}
+  pageName: string;
+};
 
 interface INewPageForm {
-  pagesForSelect: IPage[]
-  submitAction: (newPage: IPage) => void
-  css?: React.CSSProperties
+  pagesForSelect: IPage[];
+  submitAction: (newPage: IPage) => void;
+  css?: React.CSSProperties;
 }
 
 interface INewLink {
   displaying: {
-    to: string
-    relatesAs: string
-  }
+    to: string;
+    relatesAs: string;
+  };
   data: {
-    source: string
-    target: string
-    value: string
-  }
+    source: string;
+    target: string;
+    value: string;
+  };
 }
 
-export default function NewPageForm({ pagesForSelect, submitAction }: INewPageForm) {
-  const [createPageIsActive, setCreatePageIsActive] = useState(false)
-  const [createPagelinks, setCreatePageLinks] = useState<INewLink[] | []>([])
+export default function NewPageForm({
+  pagesForSelect,
+  submitAction,
+}: INewPageForm) {
+  const [createPageIsActive, setCreatePageIsActive] = useState(false);
+  const [createPagelinks, setCreatePageLinks] = useState<INewLink[] | []>([]);
   const {
     register,
     handleSubmit,
@@ -49,37 +53,37 @@ export default function NewPageForm({ pagesForSelect, submitAction }: INewPageFo
     watch,
     formState,
     formState: { errors, isDirty, isSubmitSuccessful },
-  } = useForm<Inputs>()
+  } = useForm<Inputs>();
 
-  const newPageUuid = useRef('')
-  const { ref, ...rest } = register('pageName', { required: true })
-  const inputRef = useRef<null | HTMLInputElement>(null)
+  const newPageUuid = useRef("");
+  const { ref, ...rest } = register("pageName", { required: true });
+  const inputRef = useRef<null | HTMLInputElement>(null);
 
-  const currentPageName = watch('pageName', '')
+  const currentPageName = watch("pageName", "");
 
   const nameFilledChecker = () => {
-    if (currentPageName && currentPageName.length > 0) return true
-    return false
-  }
+    if (currentPageName && currentPageName.length > 0) return true;
+    return false;
+  };
 
   const onClickCreateButton = () => {
-    setCreatePageIsActive(!createPageIsActive)
-  }
+    setCreatePageIsActive(!createPageIsActive);
+  };
   useEffect(() => {
-    newPageUuid.current = uuidv4()
-  }, [])
+    newPageUuid.current = uuidv4();
+  }, []);
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
-      setCreatePageLinks([])
-      reset()
+      setCreatePageLinks([]);
+      reset();
     }
-  }, [formState, isSubmitSuccessful, reset])
+  }, [formState, isSubmitSuccessful, reset]);
 
   const onAddLink = (pageTo: string, relatesAs: TRelationship) => {
-    const pageIndex = parseInt(pageTo.slice(pageTo.indexOf(',') + 1))
-    const pageToUuid = pageTo.slice(0, pageTo.indexOf(','))
-    const targetPageName = pagesForSelect[pageIndex].name
+    const pageIndex = parseInt(pageTo.slice(pageTo.indexOf(",") + 1), 10);
+    const pageToUuid = pageTo.slice(0, pageTo.indexOf(","));
+    const targetPageName = pagesForSelect[pageIndex].name;
 
     const newLink = {
       displaying: {
@@ -91,34 +95,37 @@ export default function NewPageForm({ pagesForSelect, submitAction }: INewPageFo
         target: pageToUuid,
         value: relatesAs,
       },
-    }
-    setCreatePageLinks([...createPagelinks, newLink as INewLink])
-  }
+    };
+    setCreatePageLinks([...createPagelinks, newLink as INewLink]);
+  };
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    const newPageLinks = createPagelinks.length > 0 ? createPagelinks.map((link) => link.data) : []
+    const newPageLinks =
+      createPagelinks.length > 0
+        ? createPagelinks.map((link) => link.data)
+        : [];
     const newPage = {
       id: newPageUuid.current,
       name: data.pageName,
       links: newPageLinks,
-    }
-    submitAction(newPage)
-    console.log(newPage)
-  }
+    };
+    submitAction(newPage);
+    console.log(newPage);
+  };
   const onFocusInput = () => {
-    inputRef.current?.focus()
-  }
+    inputRef.current?.focus();
+  };
   return (
     <form className={styles.newPageForm} onSubmit={handleSubmit(onSubmit)}>
       <input
         {...rest}
-        name='pageName'
+        name="pageName"
         className={styles.newPageName}
-        type='text'
-        placeholder='Page name'
+        type="text"
+        placeholder="Page name"
         ref={(e) => {
-          ref(e)
-          inputRef.current = e // you can still assign to ref
+          ref(e);
+          inputRef.current = e; // you can still assign to ref
         }}
       />
 
@@ -130,7 +137,7 @@ export default function NewPageForm({ pagesForSelect, submitAction }: INewPageFo
             <NewPageLink
               key={index}
               to={link.displaying.to}
-              relationship={link.displaying.relatesAs as 'parent' | 'child'}
+              relationship={link.displaying.relatesAs as "parent" | "child"}
             />
           ))}
         </ul>
@@ -141,17 +148,26 @@ export default function NewPageForm({ pagesForSelect, submitAction }: INewPageFo
         </div>
 
         <Collapse isOpen={createPageIsActive}>
-          <NewPageLinkForm pagesList={pagesForSelect} handleAddLink={onAddLink} />
+          <NewPageLinkForm
+            pagesList={pagesForSelect}
+            handleAddLink={onAddLink}
+          />
           <Divider />
         </Collapse>
       </div>
       {nameFilledChecker() ? (
-        <button className={styles.newPageSubmitButton}>Save page</button>
+        <button type="button" className={styles.newPageSubmitButton}>
+          Save page
+        </button>
       ) : (
-        <button type='button' className={styles.newPageSubmitButton + ' button-disabled'} onClick={onFocusInput}>
+        <button
+          type="button"
+          className={`${styles.newPageSubmitButton} button-disabled`}
+          onClick={onFocusInput}
+        >
           Please add page name
         </button>
       )}
     </form>
-  )
+  );
 }

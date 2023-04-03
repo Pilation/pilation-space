@@ -1,11 +1,11 @@
 .createButton {
   flex-shrink: 0;
-  box-shadow: var(--grey-button-box-shadow);
-  background-color: rgb(var(--color-surface-100));
+  box-shadow: var(--box-shadow);
+  background-color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: var(--default-rounding);
+  border-radius: var(--border-radius);
   width: 2.75rem;
   z-index: 2;
   aspect-ratio: 1 / 1;
